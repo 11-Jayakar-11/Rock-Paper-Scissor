@@ -1,0 +1,15 @@
+button {
+  height: 30px;
+  width: 60px;
+  background-color: red;
+  color:aliceblue;
+  border:none;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+  
+}
+
+p{
+  margin-left: 10px;
+}
