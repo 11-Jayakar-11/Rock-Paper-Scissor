@@ -1,13 +1,23 @@
-let score = {
-  win:0,
-  loose:0,
-  tie:0,
+let score = JSON.parse(localStorage.getItem('score'))||
+  {
+   win:0,
+   loose:0,
+   tie:0
 }
 
 function reset(){
+
   score.win=0;
   score.loose=0;
   score.tie=0;
+
+  localStorage.removeItem('score');
+
+  document.querySelector('.js-moves').innerHTML='';
+
+  document.querySelector('.js-result').innerHTML='';
+
+    document.querySelector('.js-score').innerHTML=`Wins : ${score.win} Looses : ${score.loose} Tie : ${score.tie}`; 
 }
 
 function playGame(playerMove){
@@ -60,9 +70,15 @@ function playGame(playerMove){
   else if(result === 'It\'s a Tie'){
     score.tie += 1;
   }
+
+  localStorage.setItem('score',JSON.stringify(score));
+
+    document.querySelector('.js-moves').innerHTML=` You ${playerMove} vs ${computerMove1} Computer`;
+
+    document.querySelector('.js-result').innerHTML=`${result}`;
   
-  alert(`You choose ${playerMove}. Computer choose ${computerMove1}.${result}!!
-Wins : ${score.win} Looses : ${score.loose} Tie : ${score.tie}`);
+    document.querySelector('.js-score').innerHTML=`Wins : ${score.win} Looses : ${score.loose} Tie : ${score.tie}`;
+}
 
 
   function computerMove(){
@@ -79,4 +95,5 @@ Wins : ${score.win} Looses : ${score.loose} Tie : ${score.tie}`);
       }
     return computerMove
   }
-}
+
+ 
