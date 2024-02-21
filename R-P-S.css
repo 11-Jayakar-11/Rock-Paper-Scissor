@@ -1,15 +1,37 @@
-button {
-  height: 30px;
-  width: 60px;
-  background-color: red;
-  color:aliceblue;
-  border:none;
-  border-radius: 3px;
-  margin-left: 10px;
-  cursor: pointer;
-  
+body{
+  background-color:rgb(25, 25, 25);
+  font-family:Arial;
+  color:white;
 }
 
-p{
-  margin-left: 10px;
+.images{
+  height: 80px;
+  padding:20px;
 }
+
+.button-css{
+  background-color:transparent;
+  border-color:white;
+  border-style: solid;
+  border-radius:85px;
+  border-width: 4px;
+  margin-left:20px;
+  cursor:pointer;
+}
+
+.reset{
+  font-weight: bold;
+  background-color:white;
+  color:red;
+  border:none;
+  height:30px;
+  width:60px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.reset:hover{
+  background-color:red;
+  color:white;
+}
+
