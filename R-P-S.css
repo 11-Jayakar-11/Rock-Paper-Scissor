@@ -19,13 +19,23 @@ body{
   cursor:pointer;
 }
 
-.reset{
+.stopButton{
+  font-weight: bold;
+  background-color:red;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.reset,
+.autoPlay{
   font-weight: bold;
   background-color:white;
   color:red;
   border:none;
-  height:30px;
-  width:60px;
+  padding:10px;
   border-radius:10px;
   cursor:pointer;
 }
@@ -34,4 +44,5 @@ body{
   background-color:red;
   color:white;
 }
+
 

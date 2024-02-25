@@ -20,6 +20,36 @@ function reset(){
     document.querySelector('.js-score').innerHTML=`Wins : ${score.win} Looses : ${score.loose} Tie : ${score.tie}`; 
 }
 
+function stopButton(){
+  insideButton = document.querySelector('.js-autoplay').innerText;
+  if(insideButton === 'Auto Play'){
+    document.querySelector('.js-autoplay').innerText = 'STOP';
+    document.querySelector('.js-autoplay').classList.remove('autoPlay');
+    document.querySelector('.js-autoplay').classList.add('stopButton');
+    }
+  else{
+    document.querySelector('.js-autoplay').innerText = 'Auto Play';
+    document.querySelector('.js-autoplay').classList.remove('stopButton');
+    document.querySelector('.js-autoplay').classList.add('autoPlay');
+  }
+}
+
+let isAutoPlay = false;
+let intervalId;
+
+function autoPlay(){
+  if (!isAutoPlay){
+  intervalId = setInterval(function (){
+    playerMove = computerMove();
+    playGame(playerMove);
+  },1000)
+  isAutoPlay = true;
+}else {
+  isAutoPlay = false;
+  clearInterval(intervalId);
+}
+}
+
 function playGame(playerMove){
   let computerMove1 = computerMove();
   let result;
